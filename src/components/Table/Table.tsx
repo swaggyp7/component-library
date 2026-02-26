@@ -17,8 +17,8 @@ const StyledTD = styled.td<{$width: number}>`
 export function TableFoot({columns = []}: { columns: Array<TableFootColumn> }) {
     return <tfoot>
         <tr>
-            {columns.map(column => {
-                return <td colSpan={column.span}>{column.content}</td>
+            {columns.map((column, index) => {
+                return <td key={`foot_${index}`} colSpan={column.span}>{column.content}</td>
             })}
         </tr>
     </tfoot>
