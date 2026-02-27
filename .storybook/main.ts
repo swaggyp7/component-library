@@ -13,9 +13,9 @@ const config = {
     "@storybook/addon-onboarding"
   ],
   "framework": "@storybook/react-webpack5",
-  "staticDirs": [
-    "..\\public"
-  ],
+  // "staticDirs": [
+  //   "..\\public"
+  // ],
   webpackFinal: async (config) => {
     config.resolve.extensions.push(".ts", ".tsx");
     return config;
