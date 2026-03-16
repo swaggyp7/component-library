@@ -8,7 +8,8 @@ const Wrapper = styled.article<{
   $background: string;
   $borderColor: string;
 }>`
-  width: ${({ $width }) => (typeof $width === "number" ? `${$width}px` : $width)};
+  width: ${({ $width }) =>
+    typeof $width === "number" ? `${$width}px` : $width};
   padding: ${({ $padding }) => `${$padding}px`};
   background: ${({ $background }) => $background};
   border: 1px solid ${({ $borderColor }) => $borderColor};
@@ -25,6 +26,11 @@ const Body = styled.div`
   font-size: 14px;
   line-height: 1.5;
 `;
+// Test lint-staged
+const TestBody = styled.div`
+  font-size: 14px;
+  line-height: 1.5;
+`;
 
 export function Card({
   title,
@@ -35,7 +41,12 @@ export function Card({
   borderColor = "#e5e7eb",
 }: CardProps) {
   return (
-    <Wrapper $width={width} $padding={padding} $background={background} $borderColor={borderColor}>
+    <Wrapper
+      $width={width}
+      $padding={padding}
+      $background={background}
+      $borderColor={borderColor}
+    >
       {title ? <Title>{title}</Title> : null}
       <Body>{children}</Body>
     </Wrapper>
