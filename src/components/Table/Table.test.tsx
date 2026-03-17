@@ -32,16 +32,26 @@ test("render table foot when provided", () => {
           { span: 1, content: "77.5" },
         ]}
       />
-    </Table>
+    </Table>,
   );
 
   expect(screen.getByText("Average")).toBeInTheDocument();
   expect(screen.getByText("77.5")).toBeInTheDocument();
-  expect(screen.getByText("Average").closest("td")).toHaveAttribute("colspan", "2");
+  expect(screen.getByRole("cell", { name: "Average" })).toHaveAttribute(
+    "colspan",
+    "2",
+  );
 });
 
 test("apply custom table color and background", () => {
-  render(<Table columns={columns} data={data} color="#1d4ed8" background="#f8fafc" />);
+  render(
+    <Table
+      columns={columns}
+      data={data}
+      color="#1d4ed8"
+      background="#f8fafc"
+    />,
+  );
   const table = screen.getByRole("table");
   expect(table).toHaveStyleRule("color", "#1d4ed8");
   expect(table).toHaveStyleRule("background", "#f8fafc");

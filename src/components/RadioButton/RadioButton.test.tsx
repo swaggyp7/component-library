@@ -23,6 +23,7 @@ test("update checked state on click", () => {
 test("disabled radio cannot be changed", () => {
   render(<RadioButton label="Disabled" checked={false} disabled />);
   const radio = screen.getByRole("radio");
+  const label = screen.getByText("Disabled");
   expect(radio).toBeDisabled();
-  expect(screen.getByText("Disabled").closest("label")).toHaveStyleRule("cursor", "not-allowed");
+  expect(label).toHaveStyleRule("cursor", "not-allowed");
 });

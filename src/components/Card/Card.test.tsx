@@ -10,7 +10,7 @@ test("render card title and content", () => {
 
 test("use default card styles", () => {
   render(<Card title="Default">Body</Card>);
-  const card = screen.getByText("Default").closest("article");
+  const card = screen.getByRole("article");
 
   expect(card).toHaveStyleRule("width", "320px");
   expect(card).toHaveStyleRule("padding", "16px");
@@ -20,11 +20,17 @@ test("use default card styles", () => {
 
 test("support custom card styles", () => {
   render(
-    <Card title="Custom" width="100%" padding={20} background="#f8fafc" borderColor="#1d4ed8">
+    <Card
+      title="Custom"
+      width="100%"
+      padding={20}
+      background="#f8fafc"
+      borderColor="#1d4ed8"
+    >
       Body
-    </Card>
+    </Card>,
   );
-  const card = screen.getByText("Custom").closest("article");
+  const card = screen.getByRole("article");
 
   expect(card).toHaveStyleRule("width", "100%");
   expect(card).toHaveStyleRule("padding", "20px");

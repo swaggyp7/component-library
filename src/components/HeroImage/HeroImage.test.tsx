@@ -18,7 +18,7 @@ test("render title and subtitle", () => {
       title="Welcome"
       subtitle="Minimal usable hero banner"
       alt="Custom hero"
-    />
+    />,
   );
 
   expect(screen.getByText("Welcome")).toBeInTheDocument();
@@ -27,21 +27,30 @@ test("render title and subtitle", () => {
 });
 
 test("apply default height and overlay background", () => {
-  render(<HeroImage src="https://picsum.photos/1200/600" title="With Overlay" />);
-  const section = screen.getByRole("img").closest("section");
-  const overlay = screen.getByText("With Overlay").parentElement;
+  render(
+    <HeroImage src="https://picsum.photos/1200/600" title="With Overlay" />,
+  );
+  const section = screen.getByTestId("hero-image");
+  const overlay = screen.getByTestId("hero-image-content");
 
   expect(section).toHaveStyleRule("height", "320px");
   expect(overlay).toHaveStyleRule(
     "background",
-    "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6))"
+    "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6))",
   );
 });
 
 test("support custom height and no overlay", () => {
-  render(<HeroImage src="https://picsum.photos/1200/600" title="No Overlay" height="50vh" overlay={false} />);
-  const section = screen.getByRole("img").closest("section");
-  const overlay = screen.getByText("No Overlay").parentElement;
+  render(
+    <HeroImage
+      src="https://picsum.photos/1200/600"
+      title="No Overlay"
+      height="50vh"
+      overlay={false}
+    />,
+  );
+  const section = screen.getByTestId("hero-image");
+  const overlay = screen.getByTestId("hero-image-content");
 
   expect(section).toHaveStyleRule("height", "50vh");
   expect(overlay).toHaveStyleRule("background", "transparent");

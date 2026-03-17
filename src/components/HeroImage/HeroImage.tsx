@@ -5,7 +5,8 @@ import { HeroImageProps } from "./HeroImage.type";
 const Wrapper = styled.section<{ $height: number | string }>`
   position: relative;
   width: 100%;
-  height: ${({ $height }) => (typeof $height === "number" ? `${$height}px` : $height)};
+  height: ${({ $height }) =>
+    typeof $height === "number" ? `${$height}px` : $height};
   min-height: 220px;
   overflow: hidden;
   border-radius: 10px;
@@ -27,7 +28,9 @@ const Content = styled.div<{ $overlay: boolean }>`
   padding: 16px;
   color: white;
   background: ${({ $overlay }) =>
-    $overlay ? "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6))" : "transparent"};
+    $overlay
+      ? "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6))"
+      : "transparent"};
 `;
 
 const Title = styled.h2`
@@ -49,10 +52,10 @@ export function HeroImage({
   overlay = true,
 }: HeroImageProps) {
   return (
-    <Wrapper $height={height}>
+    <Wrapper $height={height} data-testid="hero-image">
       <StyledImage src={src} alt={alt} />
       {(title || subtitle) && (
-        <Content $overlay={overlay}>
+        <Content $overlay={overlay} data-testid="hero-image-content">
           {title ? <Title>{title}</Title> : null}
           {subtitle ? <Subtitle>{subtitle}</Subtitle> : null}
         </Content>
