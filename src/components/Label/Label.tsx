@@ -9,10 +9,18 @@ const sizeMap: Record<Size, { fontSize: string; padding: string }> = {
   lg: { fontSize: "18px", padding: "10px 16px" },
 };
 
-const StyledLabel = styled.label<{ $size: Size, $color: string}>`
+const StyledLabel = styled.label<{ $size: Size; $color: string }>`
   color: ${(props) => props.$color};
   font-size: ${({ $size }) => sizeMap[$size].fontSize};
 `;
-export function Label({ size = "sm", color = "#bf4f74", children }: LabelProps) {
-    return (<StyledLabel $color={color} $size={size}>{children}</StyledLabel>)
+export function Label({
+  size = "sm",
+  color = "#bf4f74",
+  children,
+}: LabelProps) {
+  return (
+    <StyledLabel $color={color} $size={size}>
+      {children}
+    </StyledLabel>
+  );
 }

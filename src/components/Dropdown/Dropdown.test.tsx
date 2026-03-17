@@ -9,7 +9,9 @@ const options = [
 ];
 
 test("render dropdown trigger", () => {
-  render(<Dropdown options={options} onOpen={jest.fn()} onChange={jest.fn()} />);
+  render(
+    <Dropdown options={options} onOpen={jest.fn()} onChange={jest.fn()} />,
+  );
   expect(screen.getByRole("button", { name: "Select" })).toBeInTheDocument();
 });
 
@@ -32,12 +34,21 @@ test("select option and call onChange with selected item", () => {
   fireEvent.click(screen.getByText("Javascript"));
 
   expect(onChange).toHaveBeenCalledWith({ name: "Javascript", value: "2" });
-  expect(screen.getByRole("button", { name: "Javascript" })).toBeInTheDocument();
+  expect(
+    screen.getByRole("button", { name: "Javascript" }),
+  ).toBeInTheDocument();
 });
 
 test("disabled dropdown does not open or call onOpen", () => {
   const onOpen = jest.fn();
-  render(<Dropdown options={options} onOpen={onOpen} onChange={jest.fn()} disabled />);
+  render(
+    <Dropdown
+      options={options}
+      onOpen={onOpen}
+      onChange={jest.fn()}
+      disabled
+    />,
+  );
 
   fireEvent.click(screen.getByRole("button", { name: "Select" }));
   expect(onOpen).not.toHaveBeenCalled();

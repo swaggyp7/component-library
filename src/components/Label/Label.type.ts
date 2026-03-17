@@ -1,10 +1,10 @@
-import { ReactNode } from "react"
+import { ReactNode } from "react";
 
-export type Size = "xs" | "sm" | "md" | "lg"
+export type Size = "xs" | "sm" | "md" | "lg";
 
 export type LabelProps = {
-    size?: Size,
-    disabled?: boolean
-    color?: string
-    children: ReactNode
-}
+  size?: Size;
+  disabled?: boolean;
+  color?: string;
+  children: ReactNode;
+};

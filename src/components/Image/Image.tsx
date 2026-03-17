@@ -39,7 +39,16 @@ export function Image({
   border = false,
   borderColor = "#BF4F74",
   round = false,
-  src
+  src,
 }: ImageProps) {
-  return <StyledImage src={src} $width={width} $height={height} $border={border} $borderColor={borderColor} $round={round}></StyledImage>;
+  return (
+    <StyledImage
+      src={src}
+      $width={width}
+      $height={height}
+      $border={border}
+      $borderColor={borderColor}
+      $round={round}
+    ></StyledImage>
+  );
 }

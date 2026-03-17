@@ -75,7 +75,7 @@ export function Dropdown({
         disabled={disabled}
         background={color}
         onClick={() => {
-          if(disabled) return;
+          if (disabled) return;
           setOpen(!open);
           onOpen();
         }}
@@ -93,7 +93,7 @@ export function Dropdown({
                 $active={option[valueKey] == value[valueKey]}
                 $selected={option[valueKey] == value[valueKey]}
                 onClick={() => {
-                  if(disabled) return;
+                  if (disabled) return;
                   setValue(option);
                   onChange(option);
                 }}

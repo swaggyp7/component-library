@@ -1,5 +1,5 @@
 import { RadioButton } from ".";
-import { fn } from 'storybook/test';
+import { fn } from "storybook/test";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
@@ -25,16 +25,16 @@ export default {
 
 export const Default = {
   args: {
-    checked: false
-  }
+    checked: false,
+  },
 };
 export const DefaultChecked = {
   args: {
-    checked: true
-  }
+    checked: true,
+  },
 };
 export const Dsiabled = {
   args: {
-    disabled: true
+    disabled: true,
   },
 };

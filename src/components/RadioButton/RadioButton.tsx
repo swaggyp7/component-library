@@ -15,7 +15,7 @@ const StyledLabel = styled.label<{ $disabled: boolean; $color: string }>`
   position: relative;
   user-select: none;
   opacity: ${({ $disabled }) => ($disabled ? 0.6 : 1)};
-  color: ${({$color}) => $color}
+  color: ${({ $color }) => $color};
 `;
 
 const StyledCircle = styled.span<{
@@ -26,14 +26,15 @@ const StyledCircle = styled.span<{
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 2px solid ${({ $disabled }) => ($disabled ? "#d1d5db" : ({$color}) => $color)};
+  border: 2px solid
+    ${({ $disabled }) => ($disabled ? "#d1d5db" : ({ $color }) => $color)};
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 150ms ease;
 
   background: ${({ $checked, $disabled }) =>
-    $disabled ? "#f3f4f6" : $checked ? ({$color}) => $color : "white"};
+    $disabled ? "#f3f4f6" : $checked ? ({ $color }) => $color : "white"};
 
   &::after {
     content: "";
@@ -53,10 +54,17 @@ export function RadioButton({
   disabled = false,
   ...props
 }: RadioButtonProps) {
-  const [check, setCheck] = useState(checked)
+  const [check, setCheck] = useState(checked);
   return (
     <StyledLabel $color={color} $disabled={disabled}>
-      <OriginalRadio onChange={(e) => {setCheck(e.target.checked)}}  checked={check} disabled={disabled} {...props} />
+      <OriginalRadio
+        onChange={(e) => {
+          setCheck(e.target.checked);
+        }}
+        checked={check}
+        disabled={disabled}
+        {...props}
+      />
       <StyledCircle $color={color} $checked={check} $disabled={disabled} />
       {label}
     </StyledLabel>

@@ -11,9 +11,9 @@ const sizeMap: Record<Size, { fontSize: string; padding: string }> = {
 };
 
 const StyledText = styled.text<{ $size: Size; $color: string; $bold: boolean }>`
-    color: ${(props) => props.$color};
-    font-size: ${({ $size }) => sizeMap[$size].fontSize};
-    font-weight: ${(props) => (props.$bold ? "500" : "400")}
+  color: ${(props) => props.$color};
+  font-size: ${({ $size }) => sizeMap[$size].fontSize};
+  font-weight: ${(props) => (props.$bold ? "500" : "400")};
 `;
 
 export function Text({

@@ -1,5 +1,5 @@
 import { Dropdown } from ".";
-import { fn } from 'storybook/test';
+import { fn } from "storybook/test";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 export default {
@@ -19,13 +19,16 @@ export default {
   args: {
     onOpen: fn(),
     onChange: fn(),
-    options: [{name: "Java", value: "1"}, {name: "Javascript", value: "2"}, {name: "C#", value: "3"}]
+    options: [
+      { name: "Java", value: "1" },
+      { name: "Javascript", value: "2" },
+      { name: "C#", value: "3" },
+    ],
   },
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 
 export const Default = {
-  args: {
-  },
+  args: {},
 };

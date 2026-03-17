@@ -10,7 +10,7 @@ export default {
   argTypes: {
     background: { control: "color" },
     borderColor: { control: "color" },
-    children: { control: "text" }
+    children: { control: "text" },
   },
   args: {
     title: "Card Title",

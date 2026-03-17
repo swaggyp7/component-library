@@ -25,15 +25,18 @@ const StyledButton = styled.button<{
 }>`
   background: ${(props) => (props.$plain ? "white" : props.$background)};
   color: ${(props) => (props.$plain ? props.$background : "white")};
-  font-size: ${({$size}) => sizeMap[$size].fontSize};
+  font-size: ${({ $size }) => sizeMap[$size].fontSize};
   margin: 1em;
-  padding: ${({$size}) => sizeMap[$size].padding};
+  padding: ${({ $size }) => sizeMap[$size].padding};
   border: 2px solid ${(props) => props.$background};
-  border-radius: ${({$rounded}) => radiusMap[$rounded]};
+  border-radius: ${({ $rounded }) => radiusMap[$rounded]};
   cursor: pointer;
   user-select: none;
 
-  transition: background 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+  transition:
+    background 120ms ease,
+    transform 120ms ease,
+    box-shadow 120ms ease;
 
   &:hover:not(:disabled) {
     transform: translateY(-1px);
@@ -61,5 +64,16 @@ export function Button({
   onClick = () => {},
   children,
 }: ButtonProps) {
-  return <StyledButton $background={background}  onClick={onClick} disabled={disabled} $size={size} $rounded={rounded} $plain={plain}>{children}</StyledButton>;
+  return (
+    <StyledButton
+      $background={background}
+      onClick={onClick}
+      disabled={disabled}
+      $size={size}
+      $rounded={rounded}
+      $plain={plain}
+    >
+      {children}
+    </StyledButton>
+  );
 }

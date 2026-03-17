@@ -1,11 +1,11 @@
 /** @type { import('@storybook/react-webpack5').Preview } */
-import "../src/root.css"
+import "../src/root.css";
 const preview = {
   parameters: {
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
   },

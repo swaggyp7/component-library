@@ -1,2 +1,2 @@
 export { Label } from "./Label";
-export * from './Label.type'
+export * from "./Label.type";

@@ -2,10 +2,10 @@ name: CI
 
 on:
   push:
-    branches:  
+    branches:
       - master
-  pull_request: 
-  workflow_dispatch: 
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   lint-changed:
@@ -31,4 +31,3 @@ jobs:
 
       - name: Run functionality check
         run: npm run test
-  

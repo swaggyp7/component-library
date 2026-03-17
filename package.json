@@ -22,7 +22,8 @@
     "build-storybook": "storybook build",
     "prepare": "husky",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write ."
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
