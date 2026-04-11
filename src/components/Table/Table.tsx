@@ -62,7 +62,7 @@ export function Table({
       <tbody>
         {data.map((row, index) => {
           return (
-            <tr>
+            <tr key={`row_${index}`}>
               {columns.map((column) => {
                 return (
                   <StyledTD

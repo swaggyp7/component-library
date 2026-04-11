@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { TextProps } from "./Text.type";
-import { Size } from "../Label";
+import { Size, TextProps } from "./Text.type";
 import React from "react";
 
 const sizeMap: Record<Size, { fontSize: string; padding: string }> = {
@@ -10,7 +9,7 @@ const sizeMap: Record<Size, { fontSize: string; padding: string }> = {
   lg: { fontSize: "18px", padding: "10px 16px" },
 };
 
-const StyledText = styled.text<{ $size: Size; $color: string; $bold: boolean }>`
+const StyledText = styled.span<{ $size: Size; $color: string; $bold: boolean }>`
   color: ${(props) => props.$color};
   font-size: ${({ $size }) => sizeMap[$size].fontSize};
   font-weight: ${(props) => (props.$bold ? "500" : "400")};

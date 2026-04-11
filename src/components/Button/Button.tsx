@@ -1,7 +1,5 @@
 import React from "react";
 import { ButtonProps, Rounded, Size } from "./Button.type";
-import styles from "./Button.module.css";
-import clsx from "clsx";
 import styled from "styled-components";
 
 const sizeMap: Record<Size, { fontSize: string; padding: string }> = {

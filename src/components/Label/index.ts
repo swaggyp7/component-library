@@ -1,2 +1,2 @@
 export { Label } from "./Label";
-export * from "./Label.type";
+export type { LabelProps, Size as LabelSize } from "./Label.type";
