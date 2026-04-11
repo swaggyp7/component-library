@@ -73,17 +73,17 @@ export function Demo() {
 
 The library currently exports the following components:
 
-| Component | Purpose |
-| --- | --- |
-| `Button` | Action trigger with configurable size, shape, background, and plain style |
-| `Card` | Content container with title, width, padding, and border customization |
-| `Dropdown` | Basic dropdown selector with configurable label and value keys |
-| `HeroImage` | Full-width hero media block with optional overlay text |
-| `Image` | Image component with optional border and rounded corners |
-| `Label` | Lightweight text label with color and size control |
-| `RadioButton` | Styled radio input with label, checked state, and disabled state |
-| `Table` | Tabular data display with configurable columns, widths, and optional footer |
-| `Text` | Inline text primitive with size, weight, and color options |
+| Component     | Purpose                                                                     |
+| ------------- | --------------------------------------------------------------------------- |
+| `Button`      | Action trigger with configurable size, shape, background, and plain style   |
+| `Card`        | Content container with title, width, padding, and border customization      |
+| `Dropdown`    | Basic dropdown selector with configurable label and value keys              |
+| `HeroImage`   | Full-width hero media block with optional overlay text                      |
+| `Image`       | Image component with optional border and rounded corners                    |
+| `Label`       | Lightweight text label with color and size control                          |
+| `RadioButton` | Styled radio input with label, checked state, and disabled state            |
+| `Table`       | Tabular data display with configurable columns, widths, and optional footer |
+| `Text`        | Inline text primitive with size, weight, and color options                  |
 
 ## API Overview
 
